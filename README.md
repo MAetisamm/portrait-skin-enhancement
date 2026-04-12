@@ -21,7 +21,7 @@ in portrait photos while preserving eyes, eyebrows, lips, and hair.
 ## Setup
 
 ### 1. Clone the repo
-git clone https://github.com/yourusername/portrait-skin-enhancement.git
+git clone https://github.com/MAetisamm/portrait-skin-enhancement
 cd portrait-skin-enhancement
 
 ### 2. Create virtual environment
