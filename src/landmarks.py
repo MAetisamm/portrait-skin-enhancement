@@ -79,5 +79,3 @@ def get_facial_landmarks(img_bgr, face_box, predictor_path="shape_predictor_68_f
     print(f"[landmarks] Total points   : {len(pts)}")
 
     return pts
-
-    return pts
