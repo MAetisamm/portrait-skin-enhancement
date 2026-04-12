@@ -1,0 +1,21 @@
+# Virtual environment — never push this
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Output images — personal results, not code
+output/
+
+# Input images — personal photos, not code
+input/
+
+# Dlib model — 100MB, too large for GitHub
+*.dat
+*.bz2
+
+# OS files
+.DS_Store
+Thumbs.db
