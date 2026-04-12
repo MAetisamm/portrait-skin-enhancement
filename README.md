@@ -30,29 +30,3 @@ venv\Scripts\activate
 
 ### 3. Install dependencies
 pip install -r requirements.txt
-
-### 4. Download dlib landmark model
-Download shape_predictor_68_face_landmarks.dat.bz2 from:
-http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
-Extract and place the .dat file in the project root.
-
-### 5. Run
-python main.py --input input/portrait.jpg --output output/enhanced.jpg
-
-## Project Structure
-portrait-skin-enhancement/
-├── src/
-│   ├── __init__.py
-│   ├── loader.py
-│   ├── detector.py
-│   ├── landmarks.py
-│   ├── mask.py
-│   ├── smoother.py
-│   ├── tone.py
-│   └── blender.py
-├── input/
-├── output/
-├── main.py
-├── requirements.txt
-├── Dockerfile
-└── .gitignore
