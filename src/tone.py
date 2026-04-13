@@ -1,8 +1,5 @@
-# src/tone.py
-
 import cv2
 import numpy as np
-
 
 def enhance_tone(img_bgr, face_box, mask_float, brightness_boost=1.0):
     """
@@ -17,9 +14,10 @@ def enhance_tone(img_bgr, face_box, mask_float, brightness_boost=1.0):
 
     x, y, w, h = face_box
     face_crop = img_bgr[y:y+h, x:x+w]
+
     face_mask = mask_float[y:y+h, x:x+w]
 
-    face_mask = cv2.GaussianBlur(face_mask, (51, 51), sigmaX=20)
+    face_mask = cv2.GaussianBlur(face_mask, (61, 61), sigmaX=25)
 
     # Convert to YCrCb
     face_ycrcb = cv2.cvtColor(face_crop, cv2.COLOR_BGR2YCrCb)

@@ -39,17 +39,21 @@ mask = build_skin_mask(ycrcb, face_box, pts,
                         upper_skin=params['upper_skin'])
 print("  STATUS: OK")
 
+# ── Step 6 — Smooth ───────────────────────────────────────
 print("\n[STEP 6] Smoothing skin...")
-img_smooth = smooth_skin(bgr, face_box,
-                        radius  =params['radius'],
-                        eps     =params['eps'],
-                        strength=params['strength'])
+img_smooth = smooth_skin(
+    bgr, face_box,
+    mask_float=mask,           # pass mask here
+    radius    =params['radius'],
+    eps       =params['eps'],
+    strength  =params['strength']
+)
 print("  STATUS: OK")
 
 print("\n[STEP 7] Tone enhancement...")
 img_tone = enhance_tone(
     img_smooth, face_box, mask,
-    brightness_boost=1.5
+    brightness_boost=1.0
 )
 print("  STATUS: OK")
 
