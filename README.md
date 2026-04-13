@@ -168,28 +168,32 @@ No Python installation needed — just Docker!
 docker pull aetisam/skin-enhancer:v1
 
 ### Run on Windows (PowerShell)
-docker run --rm `
-  -v C:\path\to\photos:/app/input `
-  -v C:\path\to\results:/app/output `
-  aetisam/skin-enhancer:v1 `
-  --input /app/input/portrait.jpg `
+```bash
+docker run --rm 
+  -v C:\path\to\photos:/app/input
+  -v C:\path\to\results:/app/output
+  aetisam/skin-enhancer:v1
+  --input /app/input/portrait.jpg
   --output /app/output/enhanced.jpg
-
+```
 ### Run on Mac/Linux
+```bash
 docker run --rm \
   -v ~/photos:/app/input \
   -v ~/results:/app/output \
   aetisam/skin-enhancer:v1 \
   --input /app/input/portrait.jpg \
   --output /app/output/enhanced.jpg
+```
 
 ### What the flags mean
+```bash
 --rm                    → delete container after it finishes
 -v ~/photos:/app/input  → mount your photos folder into container
 -v ~/results:/app/output→ mount your results folder into container
 --input                 → path to your portrait photo inside container
 --output                → where to save the enhanced result---
-
+```
 ## Parameters
 
 All parameters are automatically tuned based on detected skin tone. You can also adjust them manually in `main.py`:
