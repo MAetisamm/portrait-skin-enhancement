@@ -160,22 +160,35 @@ Result will be saved to `output/enhanced.jpg`.
 
 ## Docker
 
-### Build the image
-```bash
-docker build -t skin-enhancer .
-```
+## Run with Docker
 
-### Run with your photo
-```bash
-docker run --rm \
-  -v /path/to/photos:/app/input \
-  -v /path/to/results:/app/output \
-  skin-enhancer \
-  --input  /app/input/portrait.jpg \
+No Python installation needed — just Docker!
+
+### Pull the image
+docker pull aetisam/skin-enhancer:v1
+
+### Run on Windows (PowerShell)
+docker run --rm `
+  -v C:\path\to\photos:/app/input `
+  -v C:\path\to\results:/app/output `
+  aetisam/skin-enhancer:v1 `
+  --input /app/input/portrait.jpg `
   --output /app/output/enhanced.jpg
-```
 
----
+### Run on Mac/Linux
+docker run --rm \
+  -v ~/photos:/app/input \
+  -v ~/results:/app/output \
+  aetisam/skin-enhancer:v1 \
+  --input /app/input/portrait.jpg \
+  --output /app/output/enhanced.jpg
+
+### What the flags mean
+--rm                    → delete container after it finishes
+-v ~/photos:/app/input  → mount your photos folder into container
+-v ~/results:/app/output→ mount your results folder into container
+--input                 → path to your portrait photo inside container
+--output                → where to save the enhanced result---
 
 ## Parameters
 
