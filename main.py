@@ -16,7 +16,7 @@ print("  Portrait Skin Enhancement Pipeline")
 print("=" * 55)
 
 print("\n[STEP 1] Loading image...")
-bgr, gray, ycrcb = load_image('input/test5.jpg')
+bgr, gray, ycrcb = load_image('input/test9.jpg')
 img_rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
 print("  STATUS: OK")
 
@@ -46,7 +46,6 @@ img_smooth = smooth_skin(bgr, face_box,
                         strength=params['strength'])
 print("  STATUS: OK")
 
-# ── Step 7 — Tone ─────────────────────────────────────────
 print("\n[STEP 7] Tone enhancement...")
 img_tone = enhance_tone(
     img_smooth, face_box, mask,

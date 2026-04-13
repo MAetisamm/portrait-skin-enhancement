@@ -19,6 +19,8 @@ def enhance_tone(img_bgr, face_box, mask_float, brightness_boost=1.0):
     face_crop = img_bgr[y:y+h, x:x+w]
     face_mask = mask_float[y:y+h, x:x+w]
 
+    face_mask = cv2.GaussianBlur(face_mask, (51, 51), sigmaX=20)
+
     # Convert to YCrCb
     face_ycrcb = cv2.cvtColor(face_crop, cv2.COLOR_BGR2YCrCb)
     Y = face_ycrcb[:, :, 0].astype(np.float32)
