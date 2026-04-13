@@ -181,7 +181,7 @@ docker run --rm
 docker run --rm \
   -v ~/photos:/app/input \
   -v ~/results:/app/output \
-  aetisam/skin-enhancer:v1 \
+  aetisam/skin-enhancer:v2 \
   --input /app/input/portrait.jpg \
   --output /app/output/enhanced.jpg
 ```
