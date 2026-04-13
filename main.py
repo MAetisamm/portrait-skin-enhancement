@@ -1,5 +1,5 @@
 # main.py
-
+import argparse
 import cv2
 import matplotlib.pyplot as plt
 from src.loader     import load_image
@@ -11,12 +11,19 @@ from src.smoother   import smooth_skin
 from src.tone       import enhance_tone
 from src.blender    import blend_and_save
 
+parser = argparse.ArgumentParser(description="Portrait Skin Enhancement")
+parser.add_argument('--input',  type=str, default='input/test.jpg',
+                    help='Path to input image')
+parser.add_argument('--output', type=str, default='output/enhanced.jpg',
+                    help='Path to save result')
+args = parser.parse_args()
+
 print("=" * 55)
 print("  Portrait Skin Enhancement Pipeline")
 print("=" * 55)
 
 print("\n[STEP 1] Loading image...")
-bgr, gray, ycrcb = load_image('input/test9.jpg')
+bgr, gray, ycrcb = load_image(args.input)
 img_rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
 print("  STATUS: OK")
 
@@ -59,7 +66,7 @@ print("  STATUS: OK")
 
 print("\n[STEP 8] Blending and saving...")
 result = blend_and_save(bgr, img_tone, mask,
-                        output_path='output/enhanced.jpg')
+                        output_path=args.output)
 result_rgb = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
 print("  STATUS: OK")
 
